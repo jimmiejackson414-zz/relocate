@@ -5,6 +5,7 @@ $wrapper-padding: 16px;
     display: flex;
     height: 100%;
     padding: 0 $wrapper-padding;
+    text-align: center;
 }
 
 #app {
@@ -30,4 +31,8 @@ h1 {
 
 section p {
 	color: white;
+}
+
+.text-section {
+    text-align: center;
 }
