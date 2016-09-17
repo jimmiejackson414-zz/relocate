@@ -4,10 +4,10 @@
     var rand1 = Math.round(randnum * (inum - 1)) + 1;
     images = new Array
     images[1] = url('https://hd.unsplash.com/photo-1472577938094-84871b72ccac')
-    // images[2] = "assets/images/bg/2.jpg"
-    // images[3] = "assets/images/bg/3.jpg"
-    // images[4] = "assets/images/bg/4.jpg"
-    // images[5] = "assets/images/bg/5.jpg"
+    images[2] = url('http://travelsquire.com/ts/wp-content/uploads/2012/08/Portland.jpg')
+    images[3] = url('http://hgtvhome.sndimg.com/content/dam/images/door/fullset/2014/4/25/0/doory2014-200-congress-ave-38xw-austin-tx-city-view.jpg.rend.hgtvcom.1280.853.jpeg')
+    images[4] = url('https://hd.unsplash.com/photo-1470082719408-b2843ab5c9ab')
+    images[5] = url('https://snap-photos.s3.amazonaws.com/img-thumbs/960w/J98HWXTPPV.jpg')
     var image = images[rand1]
 // Deactivate cloaking device -->
 
