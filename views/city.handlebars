@@ -1,0 +1,78 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<body id="cityBG">
+    <div class="container">
+        <h1 id="cityTitle">Choose a City</h1>
+        <div class="row">
+            <div class="col s4">
+                <div class="card small">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="assets/images/cards/london.jpg">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">London<i class="material-icons right">more_vert</i></span>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">London<i class="material-icons right">close</i></span>
+                        <p class="city-description">This whopping metropolis, spliced by the River Thames and studded with leafy parks, wears its history on its sleeve, and it’s also fizzing with contemporary culture. See it all, from thousand-year-old monuments to up-to-the-second art, fashion and food scenes.</p>
+                        <a href="/London"><p id="london">Select</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s4">
+            <div class="card small">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="assets/images/cards/paris.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Paris<i class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Paris<i class="material-icons right">close</i></span>
+                    <p class="city-description">Entrenched in romantic possibility, Paris seduces way beyond the springtime. From monuments to tree-lined squares, world-class galleries to bohemian back streets, the French capital has a timeless familiarity and is one of the most strollable cities in the world.</p>
+                    <a href="/Paris"><p id="paris">Select</p></a>
+                </div>
+            </div>
+        </div>
+        <div class="col s4">
+            <div class="card small">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="assets/images/cards/newyorkcity.jpg">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">New York<i class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">New York<i class="material-icons right">close</i></span>
+                    <p class="city-description">Welcome to the center of the universe. New York City is where megastars are born, megatrends set and mega-millions made and lost. Whatever you’re after — fashion, food, music, art, architecture, or just a big night out — you’ll find it in the five boroughs.</p>
+                    <a href="/NYC"><p id="nyc">Select</p></a>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function() {
+           $('#nyc').click(function(){
+                var city = "New York";
+                localStorage.setItem('city', city);
+            }); 
+
+           $('#paris').click(function(){
+                var city = "Paris";
+                localStorage.setItem('city', city);
+            }); 
+
+           $('#london').click(function(){
+                var city = "London";
+                localStorage.setItem('city', city);
+            }); 
+        });
+    </script>
+    
+</body>

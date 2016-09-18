@@ -1,0 +1,49 @@
+<div id="landingPage">
+    <!-- Content -->
+    <div class="container">
+        <h1 id="homePageTitle">justgo</h1>
+        <p id="homePageText">Find a rental. Find a friend.</p>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>justgo</h4>
+                <p>Login</p>
+                <div class='row'>
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" type="email" class="validate">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <div class="input-field col s12">
+                                <input id="password" type="password" class="validate">
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                        <div class='row' style='text-align:center'>
+                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" id='signUpBtn'>Don't Have An Account?</a>
+                        </div>
+                        <div class='row' style='text-align:center'>
+                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-large" id='signInBtn'>Sign In</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Trigger -->
+        <button data-target="modal1" class="waves-effect waves-light btn-large logInBtn modal-trigger"><i class="material-icons right">play_circle_outline</i>Get Started</button>
+
+    </div>
+</div>
+
+<!-- Modal Popup Script -->
+<script>
+    $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
+</script>
