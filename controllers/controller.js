@@ -3,9 +3,9 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var router = express.Router();
 var request = require('request');
-var selection =require('../public/assets/js/cityPicker.js');
 
-//Obtains Athorization for HomeAway API  
+
+// //Obtains Athorization for HomeAway API  
 var authorize = {
     method: 'POST',
     url: 'https://ws.homeaway.com/oauth/token',
