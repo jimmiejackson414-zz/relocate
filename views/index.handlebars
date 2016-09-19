@@ -1,20 +1,29 @@
-<div id="landingPage">
-
     {{!-- Background video --}}
     <div class="homepage-hero-module">
         <div class="video-container">
             <div class="filter"></div>
-            <video autoplay loop class="fillWidth">
+            <video autoplay loop class="fillWidth" poster='/assets/bg/video/SnapShots/Sunset-Lapse.jpg'>
                 <source src="/assets/bg/video/MP4/Sunset-Lapse.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
                 <source src="/assets/bg/video/WEBM/Sunset-Lapse.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
             </video>
-            <div class="poster hidden">
-                <img src="/assets/bg/video/SnapShots/Sunset-Lapse.jpg" alt="sunset background">
-            </div>
-            <!-- Content -->
+        </div>
+    </div>
+<div id="landingPage">
+    <!-- Content -->
     <div class="container">
         <h1 id="homePageTitle">re/locate</h1>
         <p id="homePageText">This will be our tagline.</p>
+
+
+        <!-- Modal Trigger -->
+        <div class='homePageBtns' style='text-align:center'>
+            
+            <button data-target="modal1" class="light-green lighten-1 waves-effect waves-light btn-large logInBtn modal-trigger"><i class="material-icons right">play_circle_outline</i>Login</button>
+            
+            <a href='/register' class='light-green lighten-1 waves-effect waves-light btn-large registerBtn'><i class='material-icons right'>play_circle_outline</i>Register</a>
+
+        </div>
+
 
         <!-- Modal Structure -->
         <div id="modal1" class="modal">
@@ -46,23 +55,15 @@
             </div>
         </div>
 
-        <!-- Modal Trigger -->
-        <div class='homePageBtns' style='text-align:center'>
-            <button data-target="modal1" class="light-green lighten-1 waves-effect waves-light btn-large logInBtn modal-trigger"><i class="material-icons right">play_circle_outline</i>Login</button>
-            <a href='/register' class='light-green lighten-1 waves-effect waves-light btn-large registerBtn'><i class='material-icons right'>play_circle_outline</i>Register</a>
-        </div>
-
     </div>
-        </div>
-    </div>
-
-    
 </div>
 
 <!-- Modal Popup Script -->
 <script>
     $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal-trigger').leanModal();
+    $('.modal-trigger').leanModal({
+        dismissible: true
+    })
   });
 </script>
