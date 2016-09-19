@@ -9,3 +9,45 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
+
+
+#homePageTitle {
+    font-size: 15em;
+    text-align: center;
+    margin-top: 15%;
+    color: white;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 6px;
+    z-index: 9990;
+}
+
+#homePageText {
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+    margin-top: -2%;
+    z-index: 9990;
+}
+
+
+/* ///////// */
+/* DASHBOARD */
+/* ///////// */
+
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+.nav-wrapper{
+	.dropdown-button{position:absolute; right:0; top : 0;
+	}
+.input-field input[type="search"] ~ .material-icons.icon-close{ right:2rem;}
+}
+
+nav {
+	i {
+		-webkit-filter: drop-shadow(0 3px 2px hsla(0,0%,0%,.75));
+		padding: 0px 10px;
+	}
+}
+
+
