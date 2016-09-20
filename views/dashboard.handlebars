@@ -7,7 +7,13 @@
   <div class="nav-wrapper">
     <form>
       <div class="input-field">
-        <input id="search" type="search" required>
+        <input id="search" placeholder='Enter the city' type='search' required>
+        {{!-- <input name="location_city" type="hidden">
+        <input name="location_state" type="hidden">
+        <input name="location_country" type="hidden">
+        <input name="location_lat" type="hidden">
+        <input name="location_lng" type="hidden">
+        <input name="location_id" type="hidden"> --}}
         <label for="search"><i class="material-icons">search</i></label>
       </div>
 
@@ -34,8 +40,16 @@
 
 
 {{!-- Rotate Title To Left Side --}}
-<script>
+{{!-- <script>
   var dashboardh1 = document.querySelectorAll('.dashboardh1')[0];
   var width = dashboardh1.offsetWidth;
   dashboardh1.style.transform = "translateY("+width+"px) rotate(-90deg)";
-</script>
+</script> --}}
+
+
+
+ {{!-- <script type="text/javascript" src='/assets/js/autocomplete.js'></script> --}}
+
+
+
+
