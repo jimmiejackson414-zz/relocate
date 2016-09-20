@@ -68,6 +68,9 @@
   margin-top: -2%;
   z-index: 9990; }
 
+.modal-content {
+  text-align: center; }
+
 /* ///////// */
 /* DASHBOARD */
 /* ///////// */
