@@ -44,13 +44,13 @@
     width: 100%;
 }
 
-// body {
-//     background-repeat: no-repeat center center fixed;
-//     -webkit-background-size: cover;
-//     -moz-background-size: cover;
-//     -o-background-size: cover;
-//     background-size: cover;
-// }
+body {
+    background-repeat: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
 #landingPage {
 	position: absolute;
@@ -107,6 +107,31 @@ nav {
 		-webkit-filter: drop-shadow(0 3px 2px hsla(0,0%,0%,.75));
 		padding: 0px 10px;
 	}
+	.dropdown-content li>a, .dropdown-content li>span {
+		color:white;
+	}
+	nav ul a {
+		background-color: rgba(255,255,255,0.5);
+	}
+}
+
+
+// h1 {
+// 	font-size: 7em;
+// 	position: relative;  
+// 	-ms-transform: rotate(45deg); /* IE 9 */
+// 	-ms-transform-origin: 30% 85%; /* IE 9 */
+// 	-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+// 	-webkit-transform-origin: 30% 85%; /* Chrome, Safari, Opera */
+// 	transform: rotate(45deg);
+// 	transform-origin: 30% 85%;   
+// }
+
+
+#jobOutlookWrapper {
+	width: 200px;
+	height: 0 auto;
+
 }
 
 

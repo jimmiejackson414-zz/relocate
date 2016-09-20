@@ -1,5 +1,5 @@
 <!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
+<ul id="dropdown1" class="dropdown-content transparent">
   <li><a href="#">logout</a></li>
 </ul>
 
@@ -9,11 +9,33 @@
       <div class="input-field">
         <input id="search" type="search" required>
         <label for="search"><i class="material-icons">search</i></label>
-        <i class="material-icons icon-close">close</i>
       </div>
+
 <!-- Dropdown Trigger -->
-      <a class="dropdown-button" href="/" data-activates="dropdown1"  data-beloworigin="true"><i class="material-icons ">reorder</i></a>
+      <a class="dropdown-button" href="#" data-activates="dropdown1"  data-beloworigin="true"><i class="material-icons ">reorder</i></a>
     </form>
   </div>
-
 </nav>
+
+{{!-- Main content --}}
+<div class = 'row'>
+
+	{{!-- Left side title --}}
+	<div class='col s3'>
+		  <h1 class='dashboardh1'>re/locate</h1>
+	</div>
+	<div class='col s9'>
+
+	</div>
+</div>
+
+
+
+
+
+{{!-- Rotate Title To Left Side --}}
+<script>
+  var dashboardh1 = document.querySelectorAll('.dashboardh1')[0];
+  var width = dashboardh1.offsetWidth;
+  dashboardh1.style.transform = "translateY("+width+"px) rotate(-90deg)";
+</script>
