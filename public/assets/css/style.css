@@ -107,6 +107,10 @@ nav nav ul a {
   width: 200px;
   height: 0 auto; }
 
+@media (min-aspect-ratio: 16 / 9) {
+  .video-container {
+    width: 100%;
+    height: auto; } }
 @media (max-aspect-ratio: 16 / 9) {
   .video-container {
     width: auto;
