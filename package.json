@@ -1,7 +1,7 @@
 {
-  "name": "justgo",
+  "name": "relocate",
   "version": "1.0.0",
-  "description": "Find a City, Find a Friend",
+  "description": "Come, Change Your Life",
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.15.2",
@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jameshornung/justGo.git"
+    "url": "git+https://github.com/jimmiejackson414/relocate"
   },
-  "author": "The Go Team",
+  "author": "Dream Team",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jameshornung/justGo/issues"
+    "url": "https://github.com/jimmiejackson414/relocate/issues"
   },
-  "homepage": "https://github.com/jameshornung/justGo#readme"
+  "homepage": "https://github.com/jimmiejackson414/relocate"
 }

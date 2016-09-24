@@ -1,7 +1,7 @@
 // Teleport API
-var city = [];
-console.log(city);
-var queryURL = 'https://api.teleport.org/api/cities/?search=' + city;
+
+
+
 
 
 $('#search').keydown(function(e) {
@@ -10,21 +10,24 @@ $('#search').keydown(function(e) {
 		if($('#search').val() !== '') {
 			pr();
 		}
+
+		else{
+			alert("Please Enter A City");
+		}
 	}
+
 });
 
 function pr() {
-	city = [];
+	var city = $('#search').val().trim();
 	console.log(city);
-	var text = $('#search').val().trim();
-	console.log(text);
-	// text = text.replace(/<(?:.|\n)*?>/gm, '');
-	// text = text.replace(/[<>]/gi, '');
 
-	city.push(text);
+
+	var queryURL = 'https://api.teleport.org/api/cities/?search=' + city;
+	
+	$.ajax({ url: queryURL, method: 'GET'}).done(function(response) {
+		console.log(response);
+		console.log("We are inside api function City:" + city);	
+
+	});
 }
-
-
-// $.ajax({ url: queryURL, method: 'GET'}).done(function(response) {
-// 	console.log(response);
-// })
