@@ -8,8 +8,8 @@
     <form>
       <div class="input-field">
         <input id="search" placeholder='Enter the city' name='citySearch' type='search' required>
-        {{!-- <input name="location_city" type="hidden">
-        <input name="location_state" type="hidden">
+        <input id='city-input' name="city" type="hidden" value=''>
+        {{!-- <input name="location_state" type="hidden">
         <input name="location_country" type="hidden">
         <input name="location_lat" type="hidden">
         <input name="location_lng" type="hidden">
@@ -36,9 +36,6 @@
 </div>
 
 
-
-
-
 {{!-- Rotate Title To Left Side --}}
 {{!-- <script>
   var dashboardh1 = document.querySelectorAll('.dashboardh1')[0];
@@ -46,9 +43,20 @@
   dashboardh1.style.transform = "translateY("+width+"px) rotate(-90deg)";
 </script> --}}
 
+<script>
+  $(document).ready(function() {
+    $('select').material_select();
+
+    var city = localStorage.getItem('city');
+    
+    $('#city-input').val(city);
+    $('#city-name').html(city);
+  });
+</script>
 
 
  <script type="text/javascript" src='/assets/js/autocomplete.js'></script>
+ 
 
 
 
