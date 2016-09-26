@@ -64,12 +64,8 @@ body {
   z-index: 999; }
 
 #homePageTitle {
-  font-size: 15em;
   text-align: center;
   margin-top: 15%;
-  color: white;
-  font-family: 'Anton', sans-serif;
-  letter-spacing: 6px;
   z-index: 9990; }
 
 #homePageText {
@@ -79,6 +75,10 @@ body {
   font-size: 3em;
   margin-top: -2%;
   z-index: 9990; }
+
+#homePageLogo {
+  width: 100%;
+  height: auto; }
 
 .modal-content h4 {
   text-align: center; }
