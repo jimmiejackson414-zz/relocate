@@ -4,22 +4,42 @@ $('#search').autocomplete({
 	serviceUrl: 'https://api.teleport.org/api/cities/',
 	paramName: 'search',
 	transformResult: function (data) {
-		console.log(data);
-		// parse data object and form into suggestions array
+		var json =JSON.parse(data);
+		var city = json._embedded["city:search-results"];
+		console.log(json);
+		console.log(city[0]);
 		return {
+			// city.forEach(function (city, index) {
+				// console.log(city);
+			// });
 			suggestions: [
-				{
-					value: 'someString',
-					data: 'someStuff'
-				},
-				{
-					matching_full_name: 'someString2',
-					href: 'someStuff2'
-				}
-			]
+					{
+						value: city[0].matching_full_name,
+						data: city[0]
+					},
+					{
+						value: city[1].matching_full_name,
+						data: city[1]
+					},
+					{
+						value: city[2].matching_full_name,
+						data: city[2]
+					},
+					{
+						value: city[3].matching_full_name,
+						data: city[3]
+					},
+					{
+						value: city[4].matching_full_name,
+						data: city[4]
+					}
+					
+				]
+			
 		}
 	},
-	onSelect: function (selection) {
+	onKeyPress: function (selection) {
+		console.log(selection.value);
 		alert('You selected ' + selection.value + ' its metadata is ' + selection.data);
 	}
 });
