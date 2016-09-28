@@ -137,6 +137,16 @@ nav {
     }
 }
 
+.autocomplete-suggestions {
+        background-color: white;
+        color: black;
+        border-bottom: thick 1px;
+    }
+
+.autocomplete-selected { 
+    background: #F0F0F0; 
+}
+
 #mainContent {
     padding-top: 20px;
 }
@@ -146,12 +156,6 @@ nav {
     border-right: medium dotted white;
 }
 
-
-// #jobOutlookWrapper {
-// 	width: 200px;
-// 	height: 0 auto;
-
-// }
 
 
 ///////////////////

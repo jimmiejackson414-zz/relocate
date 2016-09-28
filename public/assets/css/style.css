@@ -117,6 +117,14 @@ nav :-ms-input-placeholder {
   color: white;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3); }
 
+.autocomplete-suggestions {
+  background-color: white;
+  color: black;
+  border-bottom: thick 1px; }
+
+.autocomplete-selected {
+  background: #F0F0F0; }
+
 #mainContent {
   padding-top: 20px; }
 
