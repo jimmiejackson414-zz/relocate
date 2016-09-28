@@ -102,10 +102,26 @@ nav .dropdown-content li > a, nav .dropdown-content li > span {
   color: white; }
 nav nav ul a {
   background-color: rgba(255, 255, 255, 0.5); }
+nav ::-webkit-input-placeholder {
+  color: white;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3); }
+nav :-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3); }
+nav ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3); }
+nav :-ms-input-placeholder {
+  color: white;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3); }
 
-#jobOutlookWrapper {
-  width: 200px;
-  height: 0 auto; }
+#mainContent {
+  padding-top: 20px; }
+
+.whiteBorder {
+  border-right: medium dotted white; }
 
 @media (min-aspect-ratio: 16 / 9) {
   .video-container {

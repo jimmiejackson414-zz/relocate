@@ -119,26 +119,39 @@ nav {
 	nav ul a {
 		background-color: rgba(255,255,255,0.5);
 	}
+    ::-webkit-input-placeholder {
+        color: white;
+        text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    }
+    :-moz-placeholder { /* Firefox 18- */
+        color: white;
+        text-shadow: 2px 4px 3px rgba(0,0,0,0.3);  
+    }
+    ::-moz-placeholder {  /* Firefox 19+ */
+        color: white;
+        text-shadow: 2px 4px 3px rgba(0,0,0,0.3);  
+    }
+    :-ms-input-placeholder {  
+        color: white;
+        text-shadow: 2px 4px 3px rgba(0,0,0,0.3);  
+    }
+}
+
+#mainContent {
+    padding-top: 20px;
+}
+
+.whiteBorder {
+    // border-style: solid;
+    border-right: medium dotted white;
 }
 
 
-// h1 {
-// 	font-size: 7em;
-// 	position: relative;  
-// 	-ms-transform: rotate(45deg); /* IE 9 */
-// 	-ms-transform-origin: 30% 85%; /* IE 9 */
-// 	-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
-// 	-webkit-transform-origin: 30% 85%; /* Chrome, Safari, Opera */
-// 	transform: rotate(45deg);
-// 	transform-origin: 30% 85%;   
+// #jobOutlookWrapper {
+// 	width: 200px;
+// 	height: 0 auto;
+
 // }
-
-
-#jobOutlookWrapper {
-	width: 200px;
-	height: 0 auto;
-
-}
 
 
 ///////////////////
