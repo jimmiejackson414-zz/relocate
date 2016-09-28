@@ -6,8 +6,6 @@ $('#search').autocomplete({
 	transformResult: function (data) {
 		var json =JSON.parse(data);
 		var city = json._embedded["city:search-results"];
-		console.log(json);
-		console.log(city[0]);
 		return {
 			// city.forEach(function (city, index) {
 				// console.log(city);
@@ -15,23 +13,28 @@ $('#search').autocomplete({
 			suggestions: [
 					{
 						value: city[0].matching_full_name,
-						data: city[0]
+						data: city[0],
+						link: city[0]._links["city:item"].href
 					},
 					{
 						value: city[1].matching_full_name,
-						data: city[1]
+						data: city[1],
+						link: city[1]._links["city:item"].href
 					},
 					{
 						value: city[2].matching_full_name,
-						data: city[2]
+						data: city[2],
+						link: city[2]._links["city:item"].href
 					},
 					{
 						value: city[3].matching_full_name,
-						data: city[3]
+						data: city[3],
+						link: city[3]._links["city:item"].href
 					},
 					{
 						value: city[4].matching_full_name,
-						data: city[4]
+						data: city[4],
+						link: city[4]._links["city:item"].href
 					}
 					
 				]
@@ -39,7 +42,7 @@ $('#search').autocomplete({
 		}
 	},
 	onKeyPress: function (selection) {
-		console.log(selection.value);
+		console.log(selection.link);
 		alert('You selected ' + selection.value + ' its metadata is ' + selection.data);
 	}
 });
