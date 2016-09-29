@@ -6,9 +6,9 @@ $('#search').autocomplete({
 	transformResult: function (data) {
 		var json =JSON.parse(data);
 		var city = json._embedded["city:search-results"];
+		// console.log(city[0]._links);
 		return {
 			// city.forEach(function (city, index) {
-				// console.log(city);
 			// });
 			suggestions: [
 					{
@@ -41,9 +41,9 @@ $('#search').autocomplete({
 			
 		}
 	},
-	onKeyPress: function (selection) {
-		console.log(selection.link);
-		alert('You selected ' + selection.value + ' its metadata is ' + selection.data);
+	onSelect: function (suggestions) {
+		console.log(suggestions.data);
+		console.log('You selected ' + suggestions.value + ' its metadata is ' + suggestions.link);
 	}
 });
 
