@@ -141,6 +141,10 @@ div.row.infoTitle {
   margin: 0rem;
   padding: 0rem 0rem 3rem 0rem; }
 
+.colTitles p {
+  margin: 0em;
+  color: black; }
+
 @media (min-aspect-ratio: 16 / 9) {
   .video-container {
     width: 100%;
