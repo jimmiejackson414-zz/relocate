@@ -113,9 +113,6 @@ nav {
 		-webkit-filter: drop-shadow(0 3px 2px hsla(0,0%,0%,.75));
 		padding: 0px 10px;
 	}
-	.dropdown-content li>a, .dropdown-content li>span {
-		color:white;
-	}
 	nav ul a {
 		background-color: rgba(255,255,255,0.5);
 	}
@@ -152,8 +149,21 @@ nav {
 }
 
 .whiteBorder {
-    // border-style: solid;
     border-right: medium dotted white;
+}
+
+div.row.infoTitle {
+    background-color: white;
+    padding:10px;
+    color:black;
+    height:auto;
+    width: auto;
+    display: inline-block;
+}
+
+#mainContent h1 {
+    margin: 0rem;
+    padding: 0rem 0rem 3rem 0rem;
 }
 
 
