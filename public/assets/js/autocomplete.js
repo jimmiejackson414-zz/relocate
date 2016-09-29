@@ -6,7 +6,7 @@ $('#search').autocomplete({
 	transformResult: function (data) {
 		var json =JSON.parse(data);
 		var city = json._embedded["city:search-results"];
-		// console.log(city[0]._links);
+		console.log(city[0]._links);
 		return {
 			// city.forEach(function (city, index) {
 			// });
@@ -48,40 +48,31 @@ $('#search').autocomplete({
 		var queryURL = suggestions.link;
 		
 		$.ajax({ url: queryURL, method: 'GET'}).done(function(response) {
+			// THIS WILL PULL A LINK WHERE WE WILL HAVE TO MAKE AN ADDITIONAL AJAX CALL.
+			$('#currentCity').html(suggestions.value);
 			console.log(response._links["city:urban_area"].href);
 
 		});
 
 	}
-	
 });
 
 
-$.ajax({ url: 'https://api.teleport.org/api/urban_areas/slug:austin/scores/', method: 'GET'}).done(function(response) {
-			console.log(response.categories);
+	//ASK ROB ON HOW WE CAN START GOING THROUGH EACH LINK DEPENDING ON CITY.
+
+		$.ajax({ url: 'https://api.teleport.org/api/urban_areas/slug:austin/', method: 'GET'}).done(function(response) {
+				
+				//THIS WILL PULL THE CITY NAME AND PLACE IT ABOVE THE PAGE.
+				// console.log(response.full_name);
+				// $('#currentCity').html(response.full_name);
 
 		});
-// $('#search').keydown(function(e) {
-// 	if(e.keyCode === 13) {
 
-// 		if($('#search').val() !== '') {
-// 			pr();
-// 		}
+		$.ajax({ url: 'https://api.teleport.org/api/urban_areas/slug:austin/details/', method: 'GET'}).done(function(response) {
+				console.log(response.categories[2].data)
+				// THIS WILL PULL AVERAGA HIGH IN CITY
+				// console.log(response.categories[2].data[4].string_value);
+				
 
-// 		else{
-// 			alert("Please Enter A City");
-// 		}
-// 	}
-
-// });
-
-
-// new TeleportAutocomplete({ el: '#search', maxItems: 5 });
-// TeleportAutocomplete.init('#search').on('change', function(value) { console.log(value); });
-
-
-// function pr() {
-// 	var city = $('#search').val().trim();
-// 	console.log(city);
-
-// }
+		});
+		
