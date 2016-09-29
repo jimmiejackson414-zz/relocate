@@ -42,13 +42,25 @@ $('#search').autocomplete({
 		}
 	},
 	onSelect: function (suggestions) {
-		console.log(suggestions.data);
-		console.log('You selected ' + suggestions.value + ' its metadata is ' + suggestions.link);
+		// console.log(suggestions.data);
+		// console.log('You selected ' + suggestions.value + ' its metadata is ' + suggestions.link);
+
+		var queryURL = suggestions.link;
+		
+		$.ajax({ url: queryURL, method: 'GET'}).done(function(response) {
+			console.log(response._links["city:urban_area"].href);
+
+		});
+
 	}
+	
 });
 
 
+$.ajax({ url: 'https://api.teleport.org/api/urban_areas/slug:austin/scores/', method: 'GET'}).done(function(response) {
+			console.log(response.categories);
 
+		});
 // $('#search').keydown(function(e) {
 // 	if(e.keyCode === 13) {
 
@@ -72,12 +84,4 @@ $('#search').autocomplete({
 // 	var city = $('#search').val().trim();
 // 	console.log(city);
 
-
-// 	var queryURL = 'https://api.teleport.org/api/cities/?search=' + city;
-	
-// 	$.ajax({ url: queryURL, method: 'GET'}).done(function(response) {
-// 		console.log(response);
-// 		console.log("We are inside api function City:" + city);	
-
-// 	});
 // }
