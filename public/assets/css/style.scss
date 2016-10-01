@@ -100,7 +100,13 @@ body {
 /* DASHBOARD */
 /* ///////// */
 
-@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+// Variables
+$h3-font: 'Raleway', sans-serif;
+$current-city-font: 'Quicksand', sans-serif;
+$accent-color: #9CCC65;
 
 .nav-wrapper{
 	.dropdown-button{position:absolute; right:0; top : 0;
@@ -115,22 +121,27 @@ nav {
 	}
 	nav ul a {
 		background-color: rgba(255,255,255,0.5);
+
 	}
     ::-webkit-input-placeholder {
         color: white;
         text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+        font-family: $h3-font;
     }
     :-moz-placeholder { /* Firefox 18- */
         color: white;
-        text-shadow: 2px 4px 3px rgba(0,0,0,0.3);  
+        text-shadow: 2px 4px 3px rgba(0,0,0,0.3); 
+        font-family: $h3-font; 
     }
     ::-moz-placeholder {  /* Firefox 19+ */
         color: white;
-        text-shadow: 2px 4px 3px rgba(0,0,0,0.3);  
+        text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+        font-family: $h3-font;  
     }
     :-ms-input-placeholder {  
         color: white;
-        text-shadow: 2px 4px 3px rgba(0,0,0,0.3);  
+        text-shadow: 2px 4px 3px rgba(0,0,0,0.3); 
+        font-family: $h3-font; 
     }
 }
 
@@ -144,8 +155,16 @@ nav {
     background: #F0F0F0; 
 }
 
+#logoImg {
+    padding-top:125px;
+}
+
 #mainContent {
     padding-top: 20px;
+    h1 {
+        margin: 0rem;
+        padding: 0rem 0rem 3rem 0rem;
+    }
 }
 
 .whiteBorder {
@@ -161,9 +180,8 @@ div.row.infoTitle {
     display: inline-block;
 }
 
-#mainContent h1 {
-    margin: 0rem;
-    padding: 0rem 0rem 3rem 0rem;
+.cardText {
+    font-family: $h3-font;
 }
 
 .colTitles {
@@ -171,6 +189,10 @@ div.row.infoTitle {
         margin:0em;
         color:black;
     }
+}
+
+h1 {
+    font-family: $current-city-font;
 }
 
 

@@ -1,7 +1,8 @@
 /* ///////// */
 /* HOME PAGE */
 /* ///////// */
-@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
 .homepage-hero-module {
   border-right: none;
   border-left: none;
@@ -102,18 +103,22 @@ nav nav ul a {
   background-color: rgba(255, 255, 255, 0.5); }
 nav ::-webkit-input-placeholder {
   color: white;
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3); }
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  font-family: "Raleway", sans-serif; }
 nav :-moz-placeholder {
   /* Firefox 18- */
   color: white;
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3); }
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  font-family: "Raleway", sans-serif; }
 nav ::-moz-placeholder {
   /* Firefox 19+ */
   color: white;
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3); }
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  font-family: "Raleway", sans-serif; }
 nav :-ms-input-placeholder {
   color: white;
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3); }
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  font-family: "Raleway", sans-serif; }
 
 .autocomplete-suggestions {
   background-color: white;
@@ -123,8 +128,14 @@ nav :-ms-input-placeholder {
 .autocomplete-selected {
   background: #F0F0F0; }
 
+#logoImg {
+  padding-top: 125px; }
+
 #mainContent {
   padding-top: 20px; }
+  #mainContent h1 {
+    margin: 0rem;
+    padding: 0rem 0rem 3rem 0rem; }
 
 .whiteBorder {
   border-right: medium dotted white; }
@@ -137,13 +148,15 @@ div.row.infoTitle {
   width: auto;
   display: inline-block; }
 
-#mainContent h1 {
-  margin: 0rem;
-  padding: 0rem 0rem 3rem 0rem; }
+.cardText {
+  font-family: "Raleway", sans-serif; }
 
 .colTitles p {
   margin: 0em;
   color: black; }
+
+h1 {
+  font-family: "Quicksand", sans-serif; }
 
 @media (min-aspect-ratio: 16 / 9) {
   .video-container {
