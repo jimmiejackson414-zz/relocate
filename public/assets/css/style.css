@@ -63,23 +63,20 @@ body {
   top: 0;
   left: 0;
   z-index: 999; }
-
-#homePageTitle {
-  text-align: center;
-  margin-top: 15%;
-  z-index: 9990; }
-
-#homePageText {
-  text-align: center;
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  font-size: 3em;
-  margin-top: -2%;
-  z-index: 9990; }
-
-#homePageLogo {
-  width: 100%;
-  height: auto; }
+  #landingPage #homePageTitle {
+    text-align: center;
+    margin-top: 15%;
+    z-index: 9990; }
+  #landingPage #homePageText {
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+    margin-top: -2%;
+    z-index: 9990; }
+  #landingPage #homePageLogo {
+    width: 100%;
+    height: auto; }
 
 .modal-content h4 {
   text-align: center; }
@@ -138,7 +135,7 @@ nav :-ms-input-placeholder {
     padding: 0rem 0rem 3rem 0rem; }
 
 .whiteBorder {
-  border-right: medium dotted white; }
+  border-right: 1px double white; }
 
 div.row.infoTitle {
   background-color: white;
