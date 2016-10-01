@@ -6,61 +6,49 @@ $('#search').autocomplete({
     transformResult: function(data) {
         var json = JSON.parse(data);
         var city = json._embedded["city:search-results"];
-        console.log(city[0]._links);
-        return {
-            // city.forEach(function (city, index) {
-            // });
-            suggestions: [{
-                    value: city[0].matching_full_name,
-                    data: city[0],
-                    link: city[0]._links["city:item"].href
-                }, {
-                    value: city[1].matching_full_name,
-                    data: city[1],
-                    link: city[1]._links["city:item"].href
-                }, {
-                    value: city[2].matching_full_name,
-                    data: city[2],
-                    link: city[2]._links["city:item"].href
-                }, {
-                    value: city[3].matching_full_name,
-                    data: city[3],
-                    link: city[3]._links["city:item"].href
-                }, {
-                    value: city[4].matching_full_name,
-                    data: city[4],
-                    link: city[4]._links["city:item"].href
-                }
+        // console.log(city[0]._links);
+           
+        var suggestions = [];
+        var maxResults = 5;
+        city = city.slice(0, 5);
+        city.forEach(function (city, index) {
+        	suggestions.push(
+        		{
+                value: city.matching_full_name,
+                data: city,
+                link: city._links["city:item"].href
+            	}
+        	);
+        });
 
-            ]
-
-        }
+        return { suggestions: suggestions };
     },
+    
     onSelect: function(suggestions) {
+
     	var obj = {};
-        // console.log(suggestions.data);
-        // console.log('You selected ' + suggestions.value + ' its metadata is ' + suggestions.link);
-            var queryUrl = suggestions.link;
-            $.ajax({ url: queryUrl, method: 'GET' }).done(function(response) {
-                // THIS WILL PULL A LINK WHERE WE WILL HAVE TO MAKE AN ADDITIONAL AJAX CALL.
-                // console.log(response._links["city:urban_area"].href);
-            })
-        .then(function(res){
-        return	$.ajax({ url: res._links["city:urban_area"].href, method: 'GET' }) 
+    	var queryUrl = suggestions.link;
+    	var salariesHref;
 
-        //         //THIS WILL PULL THE CITY NAME AND PLACE IT ABOVE THE PAGE.
-                // console.log(response.full_name);
-        //         // $('#currentCity').html(response.full_name);
+    	var masterPromise = $.ajax({ url: queryUrl, method: 'GET' })
 
-            })
-        
-        .then(function(res){
-        	// console.log(res);
-        	obj.name = res.full_name
-        	console.log(obj);
-        	// $('#currentCity').html(res.full_name);
-        })
-        
+    	masterPromise.then(function (masterResponse) {
+    		return $.ajax({ url: masterResponse._links["city:urban_area"].href, method: 'GET' })
+    	}).then(function (uaResponse) {
+    		console.log(uaResponse)
+    		obj.name = uaResponse.full_name;
+        	$('#currentCity').html(obj.name);
+    		var scoresPromise = $.ajax({url: uaResponse._links["ua:scores"].href, method: 'GET' }).then(function (scoreResponse){
+    			obj.summary = scoreResponse.summary;
+        		$('#citySummary').html(obj.summary);
+    		})
+    		var detailsPromise = $.ajax({url: uaResponse._links["ua:details"].href, method: 'GET' }).then(function (detailsResponse){
+    			obj.jobsal = detailsResponse.salaries;
+    			console.log(obj.jobsal);
+    		})
+
+
+    	})   
            
     }
 
@@ -71,20 +59,3 @@ $('#search-form').on('submit', function(e){
 })
 
 
-// ASK ROB ON HOW WE CAN START GOING THROUGH EACH LINK DEPENDING ON CITY.
-
-// $.ajax({ url: 'https://api.teleport.org/api/urban_areas/slug:austin/', method: 'GET' }).done(function(response) {
-
-//     //THIS WILL PULL THE CITY NAME AND PLACE IT ABOVE THE PAGE.
-//     // console.log(response.full_name);
-//     // $('#currentCity').html(response.full_name);
-
-// });
-
-// $.ajax({ url: 'https://api.teleport.org/api/urban_areas/slug:austin/details/', method: 'GET' }).done(function(response) {
-//     console.log(response.categories[2].data)
-//         // THIS WILL PULL AVERAGA HIGH IN CITY
-//         // console.log(response.categories[2].data[4].string_value);
-
-
-// });
