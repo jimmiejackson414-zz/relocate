@@ -131,7 +131,8 @@ nav #dropdown1 {
   background: #F0F0F0; }
 
 #logoImg {
-  padding-top: 125px; }
+  padding-top: 125px;
+  position: fixed; }
 
 #mainContent {
   padding-top: 20px; }
