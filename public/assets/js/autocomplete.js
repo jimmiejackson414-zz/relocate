@@ -35,10 +35,31 @@ $('#search').autocomplete({
     	masterPromise.then(function (masterResponse) {
     		return $.ajax({ url: masterResponse._links["city:urban_area"].href, method: 'GET' })
     	}).then(function (uaResponse) {
-    		console.log(uaResponse)
+    		// console.log(uaResponse._links["ua:identifying-city"].name)
+    		obj.city = uaResponse._links["ua:identifying-city"].name;
+    		obj.state = uaResponse._links["ua:admin1-divisions"][0].name;
+    
+    		///////// WEATHER UNDERGROUND /////////
+
+			// This is our API Key - https://home.openweathermap.org/api_keys
+			var APIKey = "d4bcc2842a7e6378";
+
+			var weatherURL = "http://api.wunderground.com/api/" + APIKey + "/geolookup/conditions/q/" + obj.state + "/" + obj.city + ".json";
+			// console.log(weatherURL)
+			// AJAX call for weather
+			$.ajax({ url: weatherURL, method: 'GET' }).done(function(res){
+				obj.temp = Math.round(res.current_observation.temp_f) + '&deg';
+				$("#currentWeatherInfo").html(obj.temp);
+			})
+
+			////////////////////////////////////////////////////////////////////
+
+
+    //ADDS NAME TO THE TOP OF THE PAGE
     		obj.name = uaResponse.full_name;
         	$('#currentCity').html(obj.name);
-    		var scoresPromise = $.ajax({url: uaResponse._links["ua:scores"].href, method: 'GET' }).then(function (scoreResponse){
+    			var scoresPromise = $.ajax({url: uaResponse._links["ua:scores"].href, method: 'GET' }).then(function (scoreResponse){
+   //PUSHING SCORES INTO AN OBJECT AND ADDING THEM TO THE SCORES CARD.	
     			obj.summary = scoreResponse.summary;
     			obj.cityScore = Math.round(scoreResponse.teleport_city_score)+"%";
     			obj.costLiving = Math.round(scoreResponse.categories[1].score_out_of_10 * 10) + "%";
@@ -56,7 +77,7 @@ $('#search').autocomplete({
     			$('#cityScoreDet').css({"width":obj.cityScore});
     			$('#cityScore').html(obj.cityScore);
     			$('#costOfLivingDet').css({"width":obj.costLiving});
-    			$('#costOfLiving').html(obj.costOfLivingDet);
+    			$('#costOfLiving').html(obj.costLiving);
     			$('#housingDet').css({"width":obj.housing});
     			$('#housing').html(obj.housing);
     			$('#massTransitDet').css({"width":obj.massTransit});
@@ -74,11 +95,11 @@ $('#search').autocomplete({
     			$('#toleranceDet').css({"width":obj.tolerance});
     			$('#tolerance').html(obj.tolerance);
         		$('#outdoorDet').css({"width":obj.outdoor});
-        		$('#outdoor').html(obj.outdoor);
+        		$('#outdoors').html(obj.outdoor);
     		})
     		var detailsPromise = $.ajax({url: uaResponse._links["ua:details"].href, method: 'GET' }).then(function (detailsResponse){
     			obj.jobsal = detailsResponse.salaries;
-    			console.log(obj.jobsal);
+    			console.log(obj);
     		})
 
 
@@ -91,5 +112,9 @@ $('#search').autocomplete({
 $('#search-form').on('submit', function(e){
 	e.preventDefault();
 })
+
+// $('#search-form').on('click',function(){
+// 	$('#search').empty();
+// })
 
 
