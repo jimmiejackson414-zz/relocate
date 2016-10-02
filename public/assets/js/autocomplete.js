@@ -52,8 +52,17 @@ $('#search').autocomplete({
 				$("#currentWeatherInfo").html(obj.temp);
 			})
 
-			////////////////////////////////////////////////////////////////////
-
+			///////////////////   INPUT IN JOB FIELD    /////////////////////////////////////////////////
+			
+			$("#jobButton").on('click', function(){
+				var job = $("#jobSearch").val();
+				var jobSearch = job.replace(' ','+');
+				var indeed = 'http://www.indeed.com/jobs?q=' + jobSearch + '&l=' + obj.city + '%2C' + obj.state;
+				console.log(indeed);
+				$("#jobSearchForm").attr('action', indeed);
+				return false
+			})
+			
 
     //ADDS NAME TO THE TOP OF THE PAGE
     		obj.name = uaResponse.full_name;
