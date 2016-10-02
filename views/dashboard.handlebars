@@ -44,8 +44,7 @@
                 <div class = 'row center-align'>
                     <div class = 'card-panel white center-align roundedCorners'>
                         <div class = 'row'>
-                            <p class="black-text cardText" id = 'citySummary'>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                            <p class="black-text cardText" id = 'citySummary'>Please enter a city in the search bar for more information.
                             </p>
                         </div>
                     </div>
@@ -53,9 +52,17 @@
                 <div class = 'row'>
                     <div class = 'card-panel white center-align roundedCorners'>
                         <span class="card-title black-text">Local Jobs</span>
-                        <p class="black-text cardText" id = 'localJobsInfo'>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                        <p class="black-text cardText" id = 'localJobsInfo'>Please enter a city in the search bar for more information.
                         </p>
+                        
+                        <div class = 'row'>
+                            <form class = 'col s12'>
+                                <div class = 'row'>
+                                    <input placeholder="Enter job" id="jobSearch" type="text" class="validate">
+                                    <label for="jobSearch"><i class="material-icons">search</i></label>
+                                </div>  
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -75,16 +82,6 @@
                             <div class = 'col s7'>
                                 <div class="progress">
                                     <div class="determinate" id="cityScoreDet"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class = 'row'>
-                            <div class = 'col s6 colTitles'>
-                                <p class='cardText'>Cost of Living: <span id="costOfLiving"></span></p>
-                            </div>
-                            <div class = 'col s6'>
-                                <div class="progress">
-                                    <div class="determinate" id="costOfLivingDet"></div>
                                 </div>
                             </div>
                         </div>
@@ -187,8 +184,7 @@
                         <span class="card-title black-text">Neighborhoods</span>
                     </div>
                     <div class = 'card-panel white center-align roundedCorners'>
-                        <p class="black-text cardText" id = 'neighborhoodsInfo'>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                        <p class="black-text cardText" id = 'neighborhoodsInfo'>Please enter a city in the search bar for more information.
                         </p>
                     </div>
                 </div>
@@ -196,15 +192,25 @@
                 {{!-- Top Attractions Card --}}
                 <div class = 'row'>
                     <div class = 'row infoTitle roundedCorners'
-                        <span class="card-title black-text">Top Attractions</span>
+                        <span class="card-title black-text">Cost of Living</span>
                     </div>
                     <div class = 'card-panel white center-align roundedCorners'>
-                        <p class="black-text cardText" id = 'topAttractionsInfo'>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                        <p class="black-text cardText" id = 'topAttractionsInfo'>Please enter a city in the search bar for more information.
                         </p>
                     </div>
                 </div>
             </div>
+
+            <div class = 'row'>
+                            <div class = 'col s6 colTitles'>
+                                <p class='cardText'>Cost of Living: <span id="costOfLiving"></span></p>
+                            </div>
+                            <div class = 'col s6'>
+                                <div class="progress">
+                                    <div class="determinate" id="costOfLivingDet"></div>
+                                </div>
+                            </div>
+                        </div>
 
             {{!-- Weather Cards --}}
             <div class = 'col s4 center-align'>
@@ -214,16 +220,14 @@
                 <div class = 'row'>
                     <div class = 'card-panel white center-align roundedCorners'>
                     <span class="card-title black-text">Annual Weather</span>
-                        <p class="black-text cardText" id='annualWeatherInfo'>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                        <p class="black-text cardText" id='annualWeatherInfo'>Please enter a city in the search bar for more information.
                         </p>
                     </div>
                 </div>
                 <div class = 'row'>
                     <div class = 'card-panel white center-align roundedCorners'>
                         <span class="card-title black-text">Current Weather</span>
-                        <p class="black-text cardText" id = 'currentWeatherInfo'>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                        <p class="black-text cardText" id = 'currentWeatherInfo'>Please enter a city in the search bar for more information.
                         </p>
                     </div>
                 </div>
@@ -234,8 +238,7 @@
                         <span class="card-title black-text">Photos</span>
                     </div>
                     <div class = 'card-panel white center-align roundedCorners'>
-                        <p class="black-text cardText" id = 'photosInfo'>I am a very simple card. I am good at containing small bits of information.
-                        I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                        <p class="black-text cardText" id = 'photosInfo'>Please enter a city in the search bar for more information.
                         </p>
                     </div>
                 </div>
