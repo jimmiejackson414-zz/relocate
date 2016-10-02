@@ -50,15 +50,6 @@
     width: 100%;
 }
 
-// image full cover
-body {
-    background-repeat: no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 // page content
 #landingPage {
 	position: absolute;
@@ -102,6 +93,7 @@ body {
 /* DASHBOARD */
 /* ///////// */
 
+// font imports
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
@@ -109,7 +101,18 @@ body {
 $h3-font: 'Raleway', sans-serif;
 $current-city-font: 'Quicksand', sans-serif;
 $accent-color: #9CCC65;
+$progress-accent-color: #ccf1a2;
 
+// image full cover
+body {
+    background-repeat: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+// navigation bar and search bar
 .nav-wrapper{
 	.dropdown-button{position:absolute; right:0; top : 0;
 	}
@@ -121,10 +124,9 @@ nav {
 		-webkit-filter: drop-shadow(0 3px 2px hsla(0,0%,0%,.75));
 		padding: 0px 10px;
 	}
-	nav ul a {
-		background-color: rgba(255,255,255,0.5);
-
-	}
+	// ul a {
+	// 	background-color: white;
+	// }
     ::-webkit-input-placeholder {
         color: white;
         text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
@@ -145,58 +147,77 @@ nav {
         text-shadow: 2px 4px 3px rgba(0,0,0,0.3); 
         font-family: $h3-font; 
     }
+    ul a:hover {
+        color: white !important;
+        background-color: $accent-color !important;
+    }
+    .dropdown-content li>a{
+        color: $accent-color;
+    }
+    #dropdown1 {
+        border-radius: 5px;
+    }
 }
 
+// autocomplete list
 .autocomplete-suggestions {
+    .autocomplete-suggestion {
         background-color: white;
         color: black;
         border-bottom: thick 1px;
+        padding:2px 0px 2px 15px;
     }
-
-.autocomplete-selected { 
-    background: #F0F0F0; 
+    .autocomplete-selected { 
+        background: #F0F0F0; 
+    }
 }
 
+// logo
 #logoImg {
     padding-top:125px;
 }
 
+// main content
 #mainContent {
     padding-top: 20px;
     h1 {
         margin: 0rem;
         padding: 0rem 0rem 3rem 0rem;
     }
-}
-
-.whiteBorder {
-    border-right: 1px double white;
-}
-
-div.row.infoTitle {
-    background-color: white;
-    padding:10px;
-    color:black;
-    height:auto;
-    width: auto;
-    display: inline-block;
-}
-
-.cardText {
-    font-family: $h3-font;
-}
-
-.colTitles {
-    p {
-        margin:0em;
+    .whiteBorder {
+        border-right: 1px double white;
+    }
+    div.row.infoTitle {
+        background-color: white;
+        padding:10px;
         color:black;
+        height:auto;
+        width: auto;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    .cardText {
+        font-family: $h3-font;
+    }
+    .colTitles {
+        p {
+            margin:0em;
+            color:black;
+        }
+    }
+    .roundedCorners {
+        border-radius: 5px;
+    }
+    h1 {
+        font-family: $current-city-font;
+    }
+    .progress {
+        background-color: $progress-accent-color;
+        .determinate {
+            background-color: $accent-color;
+        }
     }
 }
-
-h1 {
-    font-family: $current-city-font;
-}
-
 
 
 ///////////////////
