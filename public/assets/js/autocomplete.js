@@ -54,17 +54,27 @@ $('#search').autocomplete({
     			// console.log(obj.cityScore);
     			$('#citySummary').html(obj.summary);
     			$('#cityScoreDet').css({"width":obj.cityScore});
-    			$('#cityScore').html(obj.cityScore)
+    			$('#cityScore').html(obj.cityScore);
     			$('#costOfLivingDet').css({"width":obj.costLiving});
+    			$('#costOfLiving').html(obj.costOfLivingDet);
     			$('#housingDet').css({"width":obj.housing});
+    			$('#housing').html(obj.housing);
     			$('#massTransitDet').css({"width":obj.massTransit});
+    			$('#massTransit').html(obj.massTransit);
     			$('#commuteDet').css({"width":obj.commute});
+    			$('#commute').html(obj.commute);
     			$('#safetyDet').css({"width":obj.safety});
+    			$('#safety').html(obj.safety);
     			$('#educationDet').css({"width":obj.education});
+    			$('#education').html(obj.education);
     			$('#internetDet').css({"width":obj.internet});
+    			$('#internetAccess').html(obj.internet);
     			$('#leisureDet').css({"width":obj.leisure});
+    			$('#leisureAndCulture').html(obj.leisure);
     			$('#toleranceDet').css({"width":obj.tolerance});
+    			$('#tolerance').html(obj.tolerance);
         		$('#outdoorDet').css({"width":obj.outdoor});
+        		$('#outdoor').html(obj.outdoor);
     		})
     		var detailsPromise = $.ajax({url: uaResponse._links["ua:details"].href, method: 'GET' }).then(function (detailsResponse){
     			obj.jobsal = detailsResponse.salaries;
