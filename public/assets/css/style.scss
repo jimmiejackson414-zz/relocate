@@ -218,7 +218,30 @@ nav {
             background-color: $accent-color;
         }
     }
+    
 }
+#jobSearch {
+        ::-webkit-input-placeholder {
+        color: black;
+        text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+        font-family: $h3-font;
+        }
+        :-moz-placeholder { /* Firefox 18- */
+            color: black;
+            text-shadow: 2px 4px 3px rgba(0,0,0,0.3); 
+            font-family: $h3-font; 
+        }
+        ::-moz-placeholder {  /* Firefox 19+ */
+            color: black;
+            text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+            font-family: $h3-font;  
+        }
+        :-ms-input-placeholder {  
+            color: black;
+            text-shadow: 2px 4px 3px rgba(0,0,0,0.3); 
+            font-family: $h3-font; 
+        }
+    }
 
 
 ///////////////////
