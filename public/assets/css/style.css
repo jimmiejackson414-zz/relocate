@@ -162,25 +162,8 @@ nav #dropdown1 {
     background-color: #ccf1a2; }
     #mainContent .progress .determinate {
       background-color: #9CCC65; }
-
-#jobSearch ::-webkit-input-placeholder {
-  color: black;
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-  font-family: "Raleway", sans-serif; }
-#jobSearch :-moz-placeholder {
-  /* Firefox 18- */
-  color: black;
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-  font-family: "Raleway", sans-serif; }
-#jobSearch ::-moz-placeholder {
-  /* Firefox 19+ */
-  color: black;
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-  font-family: "Raleway", sans-serif; }
-#jobSearch :-ms-input-placeholder {
-  color: black;
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-  font-family: "Raleway", sans-serif; }
+  #mainContent input#jobSearch {
+    color: black; }
 
 @media (min-aspect-ratio: 16 / 9) {
   .video-container {

@@ -96,6 +96,8 @@ $('#search').autocomplete({
     			$('#tolerance').html(obj.tolerance);
         		$('#outdoorDet').css({"width":obj.outdoor});
         		$('#outdoors').html(obj.outdoor);
+
+        		
     		})
     		var detailsPromise = $.ajax({url: uaResponse._links["ua:details"].href, method: 'GET' }).then(function (detailsResponse){
     			obj.jobsal = detailsResponse.salaries;
