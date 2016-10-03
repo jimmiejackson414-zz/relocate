@@ -1,3 +1,14 @@
+// font imports
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+// Variables
+$h3-font: 'Raleway', sans-serif;
+$current-city-font: 'Quicksand', sans-serif;
+$accent-color: #9CCC65;
+$progress-accent-color: #ccf1a2;
+
+
 /* ///////// */
 /* HOME PAGE */
 /* ///////// */
@@ -80,28 +91,21 @@
 
 // modal content
 .modal-content {
-	h4 {
-	text-align: center;
-	}
 	p {
 		text-align: center;
 	}
+    h4 {
+        text-align: center;
+        color: black;
+        font-family: $h3-font;
+    }
 }
+
 
 
 /* ///////// */
 /* DASHBOARD */
 /* ///////// */
-
-// font imports
-@import url('https://fonts.googleapis.com/css?family=Raleway');
-@import url('https://fonts.googleapis.com/css?family=Quicksand');
-
-// Variables
-$h3-font: 'Raleway', sans-serif;
-$current-city-font: 'Quicksand', sans-serif;
-$accent-color: #9CCC65;
-$progress-accent-color: #ccf1a2;
 
 // image full cover
 body {

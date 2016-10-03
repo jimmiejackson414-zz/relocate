@@ -1,8 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
 /* ///////// */
 /* HOME PAGE */
 /* ///////// */
-@import url("https://fonts.googleapis.com/css?family=Raleway");
-@import url("https://fonts.googleapis.com/css?family=Quicksand");
 .homepage-hero-module {
   border-right: none;
   border-left: none;
@@ -71,10 +71,12 @@
     width: 100%;
     height: auto; }
 
-.modal-content h4 {
-  text-align: center; }
 .modal-content p {
   text-align: center; }
+.modal-content h4 {
+  text-align: center;
+  color: black;
+  font-family: "Raleway", sans-serif; }
 
 /* ///////// */
 /* DASHBOARD */
