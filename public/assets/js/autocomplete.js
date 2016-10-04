@@ -59,15 +59,19 @@ $('#search').autocomplete({
 				var jobSearch = job.replace(' ','+');
 				var indeed = 'http://www.indeed.com/jobs?q=' + jobSearch + '&l=' + obj.city + '%2C' + obj.state;
 				console.log(indeed);
-				$("#jobSearchForm").attr('action', indeed);
-				return false
+				// $("#jobButton").attr('href', indeed);
+                var win = window.open(indeed, '_blank');
+				return false;
 			})
 			
+            ////////////////////////////////////////////////////////////////////////
 
     //ADDS NAME TO THE TOP OF THE PAGE
-    		obj.name = uaResponse.full_name;
+    		
+            obj.name = uaResponse.full_name;
         	$('#currentCity').html(obj.name);
     			var scoresPromise = $.ajax({url: uaResponse._links["ua:scores"].href, method: 'GET' }).then(function (scoreResponse){
+   
    //PUSHING SCORES INTO AN OBJECT AND ADDING THEM TO THE SCORES CARD.	
     			obj.summary = scoreResponse.summary;
     			obj.cityScore = Math.round(scoreResponse.teleport_city_score)+"%";
@@ -109,7 +113,6 @@ $('#search').autocomplete({
         		
     		})
     		var detailsPromise = $.ajax({url: uaResponse._links["ua:details"].href, method: 'GET' }).then(function (detailsResponse){
-    			obj.jobsal = detailsResponse.salaries;
     			console.log(obj);
     		})
 
