@@ -54,17 +54,18 @@
                         <span class="card-title black-text">Local Jobs</span>
                         <p class="black-text cardText" id = 'localJobsInfo'>Please enter a city in the search bar for more information.
                         </p>
-                        
                         <div class = 'row'>
-                            <form class = 'col s12' id="jobSearchForm" target='_blank'>
+
+                            <form class = 'col s12' id="jobSearchForm" METHOD='GET'>
                                 <div class = 'row'> 
                                     <input placeholder="Enter job" id="jobSearch" type="text" class="validate">
                                 </div>  
-                                <div class="row">
-                                    <button id="jobButton" type="submit" name="action">Search
-                                    </button>
-                                </div>
                             </form>
+                        </div>
+                        <div class="row">
+                            <button class="btn waves-effect waves-light" id="jobButton" type="submit" name="action" form='jobSearchForm'>Search
+                                <i class="material-icons right">search</i>
+                            </button>
                         </div>
                     </div>
                 </div>
