@@ -58,8 +58,7 @@ $('#search').autocomplete({
 				var job = $("#jobSearch").val();
 				var jobSearch = job.replace(' ','+');
 				var indeed = 'http://www.indeed.com/jobs?q=' + jobSearch + '&l=' + obj.city + '%2C' + obj.state;
-				console.log(indeed);
-				// $("#jobButton").attr('href', indeed);
+				// console.log(indeed);
                 var win = window.open(indeed, '_blank');
 				return false;
 			})
@@ -116,6 +115,17 @@ $('#search').autocomplete({
     			console.log(obj);
     		})
 
+    		/////// FLICKR ////////
+
+    		var wundergroundAPI = '37db7f547ed492dd9e4437a0caa3c181';
+    		var wundergroundSecret = 'eca17d987d814dfc';
+    		var apiURL = 'https://api.flickr.com/services/rest/';
+
+    		$.ajax({ url: weatherURL, method: 'GET' }).done(function(res){
+    			
+    		}
+
+    		
 
     	})   
            
