@@ -26,6 +26,8 @@ router.get('/dashboard', function(req, res, body) {
     }
 });
 
+
+
 router.post('/dashboard/register', function(req, res) {
 	var user = new User(req.body);
 	user.save(function(err, doc) {
