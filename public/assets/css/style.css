@@ -78,6 +78,12 @@
   color: black;
   font-family: "Raleway", sans-serif; }
 
+/* //////// */
+/* REGISTER */
+/* //////// */
+#personalInfoForm input {
+  color: black; }
+
 /* ///////// */
 /* DASHBOARD */
 /* ///////// */

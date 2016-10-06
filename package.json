@@ -2,21 +2,23 @@
   "name": "relocate",
   "version": "1.0.0",
   "description": "Come, Change Your Life",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
+    "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
+    "logger": "0.0.1",
     "method-override": "^2.3.6",
-    "mysql": "^2.11.1",
-    "passport-local": "^1.0.0",
+    "morgan": "^1.7.0",
     "path": "^0.12.7",
     "request": "^2.74.0",
     "sequelize": "^3.23.6"
   },
   "devDependencies": {},
   "engines": {
-    "node": "6.2.2"
+    "node": "6.2.2",
+    "npm": "3.9.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
