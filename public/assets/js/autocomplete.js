@@ -52,10 +52,6 @@ $('#search').autocomplete({
 				$("#currentWeatherInfo").html(obj.temp);
 			})
 
-			///////////////////   INPUT IN JOB FIELD    /////////////////////////////////////////////////
-			
-            ////////////////////////////////////////////////////////////////////////
-
     //ADDS NAME TO THE TOP OF THE PAGE
     		
             obj.name = uaResponse.full_name;
@@ -102,21 +98,10 @@ $('#search').autocomplete({
 
         		
     		})
-    		var detailsPromise = $.ajax({url: uaResponse._links["ua:details"].href, method: 'GET' }).then(function (detailsResponse){
-    			console.log(obj);
+    		var imagesPromise = $.ajax({url: uaResponse._links["ua:images"].href, method: 'GET' }).then(function (imagesResponse){
+    			var image = imagesResponse.photos[0].image.mobile;
+                $('#picture').html('<img src="' + image + '" style="width:300px; height:300px;">')
     		})
-
-    		///// FLICKR ////////
-
-    		var flickrAPI = '37db7f547ed492dd9e4437a0caa3c181';
-    		var flickrSecret = 'eca17d987d814dfc';
-    		var apiURL = 'https://api.flickr.com/services/rest/';
-
-    		$.ajax({ url: apiURL, method: 'GET' }).done(function(res){
-    			console.log(res);
-    		})
-
-    		
 
     	}) 
            
@@ -143,5 +128,8 @@ $("#jobButton").on('click', function(){
 // $('#search-form').on('click',function(){
 // 	$('#search').empty();
 // })
+
+ 
+
 
 
