@@ -5,31 +5,31 @@
 </div>
 	
 	<div class = 'row'>
-			<form class = 'col s12' id = 'personalInfoForm' action='/dashboard' method='post'>
+			<form class = 'col s12' id = 'personalInfoForm' action='/dashboard/register' method='post'>
 				<div class = 'card-panel'>
 				<h5>Personal Information:</h5>
 					<div class = 'row'>
 						<div class="input-field col s6">
 							<i class="material-icons prefix icon-grey">perm_identity</i>
-							<input id="first_name" type="text" class="validate">
+							<input id="first_name" type="text" name='first_name' class="validate">
 		          			<label for="first_name">First Name</label>
 		          		</div>
 		          		<div class="input-field col s6">
 		          			<i class="material-icons prefix icon-grey">perm_identity</i>
-							<input id="last_name" type="text" class="validate">
+							<input id="last_name" type="text" name='last_name' class="validate">
 		          			<label for="last_name">Last Name</label>
 		          		</div>
 					</div>
 					<div class = 'row'>
 						<div class = 'input-field col s6'>
 							<i class="material-icons prefix icon-grey">email</i>
-							<input id = 'email' type = 'email' class = 'validate'>
+							<input id = 'email' type = 'email' name='email' class = 'validate'>
 							<label for = 'email'>Email</label>
 						</div>
 						<div class = 'input-field col s6'>
-							<i class="material-icons prefix icon-grey">my_location</i>
-							<input id = 'currentLocation' type = 'text' class = 'validate'>
-							<label for = 'currentLocation'>Current City</label>
+							<i class="material-icons prefix icon-grey">vpn_key</i>
+							<input id = 'currentLocation' type = 'password' name='password' class = 'validate'>
+							<label for = 'currentLocation'>Password</label>
 						</div>
 					</div>
 					<div class= 'row' style='text-align:center'>
@@ -41,6 +41,10 @@
 			</form>
 	</div>
 
+
+	{{#if errorMsg}}
+		<h1>{{errorMsg}}</h1>
+	{{/if}}
 
 
 
