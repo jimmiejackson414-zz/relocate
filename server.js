@@ -22,7 +22,8 @@ app.use(bodyParser.urlencoded({
 
 // Database configuration for mongoose
 // db: relocate
-mongoose.connect('mongodb://localhost/relocate');
+// mongoose.connect('mongodb://localhost/relocate');
+mongoose.connect('mongodb://heroku_1jbqk95l:rk08ssh75engfe5hbpvg2ivs5p@ds049456.mlab.com:49456/heroku_1jbqk95l');
 // hook mongoose connection to db
 var db = mongoose.connection;
 
