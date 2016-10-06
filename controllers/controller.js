@@ -4,9 +4,6 @@ var methodOverride = require('method-override');
 var router = express.Router();
 var request = require('request');
 
-//global variable to hold selected city
-// var city;
-// var cityId;
 
 //===================================================================
 
@@ -21,6 +18,18 @@ router.get('/register', function(req, res, body) {
 router.get('/dashboard', function(req, res, body) {
     res.render('dashboard');
 })
+
+// router.post('/submit', function(req, res) {
+// 	var user = new User(req.body);
+// 	user.save(function(err, doc) {
+// 		if(err) {
+// 			res.send(err);
+// 		} else {
+// 			res.send(doc);
+// 		}
+
+// 	});
+// });
 
 
 module.exports = router;
