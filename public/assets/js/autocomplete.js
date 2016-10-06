@@ -1,4 +1,5 @@
 // Teleport API
+var obj = {};
 
 $('#search').autocomplete({
     serviceUrl: 'https://api.teleport.org/api/cities/',
@@ -26,7 +27,6 @@ $('#search').autocomplete({
     
     onSelect: function(suggestions) {
 
-    	var obj = {};
     	var queryUrl = suggestions.link;
     	var salariesHref;
 
@@ -35,7 +35,7 @@ $('#search').autocomplete({
     	masterPromise.then(function (masterResponse) {
     		return $.ajax({ url: masterResponse._links["city:urban_area"].href, method: 'GET' })
     	}).then(function (uaResponse) {
-    		// console.log(uaResponse._links["ua:identifying-city"].name)
+    		// console.log("ran")
     		obj.city = uaResponse._links["ua:identifying-city"].name;
     		obj.state = uaResponse._links["ua:admin1-divisions"][0].name;
     
@@ -53,15 +53,6 @@ $('#search').autocomplete({
 			})
 
 			///////////////////   INPUT IN JOB FIELD    /////////////////////////////////////////////////
-			
-			$("#jobButton").on('click', function(){
-				var job = $("#jobSearch").val();
-				var jobSearch = job.replace(' ','+');
-				var indeed = 'http://www.indeed.com/jobs?q=' + jobSearch + '&l=' + obj.city + '%2C' + obj.state;
-				// console.log(indeed);
-                var win = window.open(indeed, '_blank');
-				return false;
-			})
 			
             ////////////////////////////////////////////////////////////////////////
 
@@ -115,19 +106,19 @@ $('#search').autocomplete({
     			console.log(obj);
     		})
 
-    		/////// FLICKR ////////
+    		///// FLICKR ////////
 
-    		var wundergroundAPI = '37db7f547ed492dd9e4437a0caa3c181';
-    		var wundergroundSecret = 'eca17d987d814dfc';
+    		var flickrAPI = '37db7f547ed492dd9e4437a0caa3c181';
+    		var flickrSecret = 'eca17d987d814dfc';
     		var apiURL = 'https://api.flickr.com/services/rest/';
 
-    		$.ajax({ url: weatherURL, method: 'GET' }).done(function(res){
-    			
-    		}
+    		$.ajax({ url: apiURL, method: 'GET' }).done(function(res){
+    			console.log(res);
+    		})
 
     		
 
-    	})   
+    	}) 
            
     }
 
@@ -136,6 +127,18 @@ $('#search').autocomplete({
 $('#search-form').on('submit', function(e){
 	e.preventDefault();
 })
+
+$("#jobButton").on('click', function(){
+
+        var job = $("#jobSearch").val();
+        var jobSearch = job.replace(' ','+');
+        var indeed = 'http://www.indeed.com/jobs?q=' + jobSearch + '&l=' + obj.city + '%2C' + obj.state;
+        // console.log(indeed);
+        var win = window.open(indeed, '_blank');
+
+        return false
+
+    })  
 
 // $('#search-form').on('click',function(){
 // 	$('#search').empty();
