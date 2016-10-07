@@ -35,7 +35,7 @@ $('#search').autocomplete({
     	masterPromise.then(function (masterResponse) {
     		return $.ajax({ url: masterResponse._links["city:urban_area"].href, method: 'GET' })
     	}).then(function (uaResponse) {
-    		// console.log("ran")
+    		console.log(queryUrl);
     		obj.city = uaResponse._links["ua:identifying-city"].name;
     		obj.state = uaResponse._links["ua:admin1-divisions"][0].name;
     
@@ -100,8 +100,11 @@ $('#search').autocomplete({
     		})
     		var imagesPromise = $.ajax({url: uaResponse._links["ua:images"].href, method: 'GET' }).then(function (imagesResponse){
     			var image = imagesResponse.photos[0].image.mobile;
-                $('#picture').html('<img src="' + image + '" style="width:300px; height:300px;">')
+                $('#picture').html('<img src="' + image + '"  style="width:300px; height:300px;">')
     		})
+            var detailsPromise = $.ajax({url: uaResponse._links["ua:details"].href, method: 'GET' }).then(function (detailsResponse){
+                console.log(detailsResponse.categories[3].data[1].currency_dollar_value);
+            })
 
     	}) 
            
