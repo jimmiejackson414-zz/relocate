@@ -95,7 +95,6 @@ $('#search').autocomplete({
     			$('#tolerance').html(obj.tolerance);
         		$('#outdoorDet').css({"width":obj.outdoor});
         		$('#outdoors').html(obj.outdoor);
-
         		
     		})
     		var imagesPromise = $.ajax({url: uaResponse._links["ua:images"].href, method: 'GET' }).then(function (imagesResponse){
@@ -103,7 +102,38 @@ $('#search').autocomplete({
                 $('#picture').html('<img src="' + image + '"  style="width:300px; height:300px;">')
     		})
             var detailsPromise = $.ajax({url: uaResponse._links["ua:details"].href, method: 'GET' }).then(function (detailsResponse){
-                console.log(detailsResponse.categories[3].data[1].currency_dollar_value);
+                var cost = detailsResponse.categories[3];
+                var weather = detailsResponse.categories[2];
+            
+            //-----------COST OF LIVING
+                obj.priceOfApple = " $ " + Math.round(cost.data[1].currency_dollar_value);
+                obj.priceOfBread = " $ " + Math.round(cost.data[2].currency_dollar_value);
+                obj.priceOfCappuccino = " $ " + Math.round(cost.data[3].currency_dollar_value);
+                obj.priceOfMovie = " $ " + Math.round(cost.data[4].currency_dollar_value);
+                obj.priceOfBeer = " $ " + Math.round(cost.data[6].currency_dollar_value);
+                obj.priceOfMeal = " $ " + Math.round(cost.data[8].currency_dollar_value);
+                obj.priceOfTaxi = " $ " + Math.round(cost.data[9].currency_dollar_value);
+                $("#apples").html(obj.priceOfApple);
+                $("#bread").html(obj.priceOfBread);
+                $("#cappuccino").html(obj.priceOfCappuccino);
+                $("#movies").html(obj.priceOfMovie);
+                $("#beer").html(obj.priceOfBeer);
+                $("#meals").html(obj.priceOfMeal);
+                $("#taxi").html(obj.priceOfTaxi);
+            //------------------------------
+                obj.weatherType = weather.data[7].string_value;
+                obj.clearDays = weather.data[1].float_value;
+                obj.rainyDays = weather.data[2].float_value;
+                obj.tempHigh= Math.round(weather.data[4].string_value * 1.8) + 32 +"° F";
+                obj.tempLow = Math.round(weather.data[5].string_value * 1.8) + 32 +"° F";
+                console.log(obj.tempHigh);
+                console.log(obj.tempLow);
+                $("#weatherType").html(obj.weatherType);
+                $("#clearDays").html(obj.clearDays);
+                $("#rainyDays").html(obj.rainyDays);
+                $("#tempHigh").html(obj.tempHigh);
+                $("#tempLow").html(obj.tempLow);
+
             })
 
     	}) 
