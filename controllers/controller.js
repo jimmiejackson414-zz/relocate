@@ -20,13 +20,11 @@ router.get('/register', function(req, res, body) {
 router.get('/dashboard', function(req, res, body) {
     if (!req.cookies.loggedIn) {
     	console.log("Not logged in");
-    	res.render('register', { errorMsg: 'You must create an account to access re||locate'});
+    	res.render('register', { errorMsg: 'You must create an account to access re/locate'});
     }else {
     	res.render('dashboard');	
     }
 });
-
-
 
 router.post('/dashboard/register', function(req, res) {
 	var user = new User(req.body);
@@ -41,6 +39,30 @@ router.post('/dashboard/register', function(req, res) {
 	});
 });
 
+router.post('/dashboard/login', (req, res) => {
+        console.log('login button hit');
+        // console.log(req.body);
+        let username = req.body.username;
+        User.find({ username: username }).then((loginUser) => {
+            console.log(loginUser);
+            console.log(loginUser[0]);
+            // console.log(loginUser[0].username);
+            if (loginUser[0] === undefined) {
+                console.log('no such user');
+                res.render('register', { errorMsg: 'No such user found in the database' });
+            } else {
+                console.log('user in database');
+                bcrypt.compare(req.body.password, loginUser[0].password, (err, result) => {
+                    if (result === true) {
+                        res.cookie('loggedIn', 'true', { maxAge: 900000, httpOnly: true });
+                        res.redirect('dashboard');
+                    } else {
+                        res.render('register', { invalidLogin: 'Username or Password was incorrect; try again' });
+                    }
+                });
+            }
+        });
+    });
 
 
 

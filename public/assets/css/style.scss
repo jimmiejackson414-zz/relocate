@@ -99,6 +99,9 @@ $progress-accent-color: #ccf1a2;
         color: black;
         font-family: $h3-font;
     }
+    input {
+        color: black;
+    }
 }
 
 /* //////// */
@@ -108,6 +111,12 @@ $progress-accent-color: #ccf1a2;
     input {
         color: black;
     }
+}
+
+#errorMsg {
+    color: red;
+    text-align: center;
+    font-family: $h3-font;
 }
 
 
@@ -201,9 +210,10 @@ nav {
         border-right: 1px double white;
     }
     div.row.infoTitle {
-        background-color: white;
+        // background-color: white;
         padding:10px;
-        color:black;
+        color: white !important;
+        font-family: $h3-font;
         height:auto;
         width: auto;
         display: inline-block;
@@ -232,6 +242,11 @@ nav {
     }
     input#jobSearch {
         color:black;
+    }
+    .card-title {
+        font: $h3-font;
+        font-size: 2rem;
+        text-transform: uppercase;
     }
 }
 

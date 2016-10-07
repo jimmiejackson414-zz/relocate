@@ -77,12 +77,19 @@
   text-align: center;
   color: black;
   font-family: "Raleway", sans-serif; }
+.modal-content input {
+  color: black; }
 
 /* //////// */
 /* REGISTER */
 /* //////// */
 #personalInfoForm input {
   color: black; }
+
+#errorMsg {
+  color: red;
+  text-align: center;
+  font-family: "Raleway", sans-serif; }
 
 /* ///////// */
 /* DASHBOARD */
@@ -150,9 +157,9 @@ nav #dropdown1 {
   #mainContent .whiteBorder {
     border-right: 1px double white; }
   #mainContent div.row.infoTitle {
-    background-color: white;
     padding: 10px;
-    color: black;
+    color: white !important;
+    font-family: "Raleway", sans-serif;
     height: auto;
     width: auto;
     display: inline-block;
@@ -172,6 +179,10 @@ nav #dropdown1 {
       background-color: #9CCC65; }
   #mainContent input#jobSearch {
     color: black; }
+  #mainContent .card-title {
+    font: "Raleway", sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase; }
 
 @media (min-aspect-ratio: 16 / 9) {
   .video-container {
