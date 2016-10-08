@@ -28,22 +28,23 @@ router.get('/dashboard', function(req, res, body) {
 
 router.post('/dashboard/register', function(req, res) {
 	var user = new User(req.body);
+	console.log(req.body);
 	user.save(function(err, doc) {
 		if(err) {
 			res.send(err);
 		} else {
-			res.cookie('loggedIn', 'true', {maxAge: 900000, httpOnly: true});
+			res.cookie('loggedIn', 'true', {maxAge: 9000000, httpOnly: true});
 			res.redirect('/dashboard');
 		}
 
 	});
 });
 
-router.post('/dashboard/login', (req, res) => {
+router.post('/dashboard', (req, res) => {
         console.log('login button hit');
-        // console.log(req.body);
-        let username = req.body.username;
-        User.find({ username: username }).then((loginUser) => {
+        console.log(req.body);
+        let email = req.body.email;
+        User.find({ email: email }).then((loginUser) => {
             console.log(loginUser);
             console.log(loginUser[0]);
             // console.log(loginUser[0].username);
@@ -54,10 +55,10 @@ router.post('/dashboard/login', (req, res) => {
                 console.log('user in database');
                 bcrypt.compare(req.body.password, loginUser[0].password, (err, result) => {
                     if (result === true) {
-                        res.cookie('loggedIn', 'true', { maxAge: 900000, httpOnly: true });
-                        res.redirect('dashboard');
+                        res.cookie('loggedIn', 'true', { maxAge: 9000000, httpOnly: true });
+                        res.redirect('/dashboard');
                     } else {
-                        res.render('register', { invalidLogin: 'Username or Password was incorrect; try again' });
+                        res.render('/register', { invalidLogin: 'Username or Password was incorrect; try again' });
                     }
                 });
             }
