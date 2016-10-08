@@ -33,7 +33,7 @@ router.post('/dashboard/register', function(req, res) {
 		if(err) {
 			res.send(err);
 		} else {
-			res.cookie('loggedIn', 'true', {maxAge: 900000, httpOnly: true});
+			res.cookie('loggedIn', 'true', {maxAge: 9000000, httpOnly: true});
 			res.redirect('/dashboard');
 		}
 
@@ -55,7 +55,7 @@ router.post('/dashboard', (req, res) => {
                 console.log('user in database');
                 bcrypt.compare(req.body.password, loginUser[0].password, (err, result) => {
                     if (result === true) {
-                        res.cookie('loggedIn', 'true', { maxAge: 900000, httpOnly: true });
+                        res.cookie('loggedIn', 'true', { maxAge: 9000000, httpOnly: true });
                         res.redirect('/dashboard');
                     } else {
                         res.render('/register', { invalidLogin: 'Username or Password was incorrect; try again' });
