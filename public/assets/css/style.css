@@ -71,22 +71,33 @@
     width: 100%;
     height: auto; }
 
-.modal-content p {
-  text-align: center; }
-.modal-content h4 {
-  text-align: center;
-  color: black;
-  font-family: "Raleway", sans-serif; }
-.modal-content input.validate {
-  color: black; }
-.modal-content .active {
-  border-bottom-color: #9CCC65; }
+.modal-content {
+  /* label focus color */
+  /* label underline focus color */ }
+  .modal-content p {
+    text-align: center; }
+  .modal-content h4 {
+    text-align: center;
+    color: black;
+    font-family: "Raleway", sans-serif; }
+  .modal-content input.validate {
+    color: black; }
+  .modal-content .input-field input[type=text]:focus + label {
+    color: #9CCC65; }
+  .modal-content .input-field input[type=text]:focus {
+    border-bottom: 1px solid #9CCC65;
+    box-shadow: 0 1px 0 0 #000; }
 
 /* //////// */
 /* REGISTER */
 /* //////// */
 #personalInfoForm input {
   color: black; }
+#personalInfoForm i {
+  color: #9CCC65; }
+
+.registerLabel {
+  color: #9CCC65; }
 
 #errorMsg {
   color: red;
@@ -152,7 +163,9 @@ nav #dropdown1 {
   position: fixed; }
 
 #mainContent {
-  padding-top: 20px; }
+  padding-top: 20px;
+  /* label focus color */
+  /* label underline focus color */ }
   #mainContent h1 {
     margin: 0rem;
     padding: 0rem 0rem 3rem 0rem; }
@@ -185,6 +198,15 @@ nav #dropdown1 {
     font: "Raleway", sans-serif;
     font-size: 2rem;
     text-transform: uppercase; }
+  #mainContent .input-field input[type=text]:focus + label {
+    color: #9CCC65; }
+  #mainContent .input-field input[type=text]:focus {
+    border-bottom: 1px solid #9CCC65;
+    box-shadow: 0 1px 0 0 #000; }
+  #mainContent #jobButton {
+    background-color: #9CCC65; }
+  #mainContent #currentWeatherInfo {
+    font-size: 2rem; }
 
 @media (min-aspect-ratio: 16 / 9) {
   .video-container {
