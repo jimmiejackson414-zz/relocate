@@ -103,9 +103,15 @@ $progress-accent-color: #ccf1a2;
     input.validate {
         color: black;
     }
-    .active {
-        border-bottom-color: $accent-color;
-    }
+ /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: $accent-color;
+}
+/* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid $accent-color;
+     box-shadow: 0 1px 0 0 #000;
+   }
 }
 
 /* //////// */
@@ -115,7 +121,16 @@ $progress-accent-color: #ccf1a2;
     input {
         color: black;
     }
+    i {
+        color: $accent-color;
+    }
+
 }
+
+.registerLabel {
+        color: $accent-color;
+    }
+
 
 #errorMsg {
     color: red;
@@ -252,6 +267,21 @@ nav {
         font-size: 2rem;
         text-transform: uppercase;
     }
+     /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: $accent-color;
+    }
+    /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid $accent-color;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   #jobButton {
+        background-color: $accent-color;
+   }
+   #currentWeatherInfo {
+        font-size: 2rem;
+   }
 }
 
 
