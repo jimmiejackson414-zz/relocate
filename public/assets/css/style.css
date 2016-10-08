@@ -77,8 +77,10 @@
   text-align: center;
   color: black;
   font-family: "Raleway", sans-serif; }
-.modal-content input {
+.modal-content input.validate {
   color: black; }
+.modal-content .active {
+  border-bottom-color: #9CCC65; }
 
 /* //////// */
 /* REGISTER */
@@ -146,7 +148,7 @@ nav #dropdown1 {
   background: #F0F0F0; }
 
 #logoImg {
-  padding-top: 125px;
+  bottom: 0%;
   position: fixed; }
 
 #mainContent {

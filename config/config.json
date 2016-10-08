@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "users_db",
+    "database": "heroku_6wg162k4",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

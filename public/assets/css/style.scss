@@ -7,6 +7,7 @@ $h3-font: 'Raleway', sans-serif;
 $current-city-font: 'Quicksand', sans-serif;
 $accent-color: #9CCC65;
 $progress-accent-color: #ccf1a2;
+// $secondary-color: $accent-color;
 
 
 /* ///////// */
@@ -99,8 +100,11 @@ $progress-accent-color: #ccf1a2;
         color: black;
         font-family: $h3-font;
     }
-    input {
+    input.validate {
         color: black;
+    }
+    .active {
+        border-bottom-color: $accent-color;
     }
 }
 
@@ -195,7 +199,7 @@ nav {
 
 // logo
 #logoImg {
-    padding-top:125px;
+    bottom: 0%;
     position: fixed;
 }
 
