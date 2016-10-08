@@ -44,7 +44,7 @@ $('#search').autocomplete({
 			// This is our API Key - https://home.openweathermap.org/api_keys
 			var APIKey = "d4bcc2842a7e6378";
 
-			var weatherURL = "http://api.wunderground.com/api/" + APIKey + "/geolookup/conditions/q/" + obj.state + "/" + obj.city + ".json";
+			var weatherURL = "https://api.wunderground.com/api/" + APIKey + "/geolookup/conditions/q/" + obj.state + "/" + obj.city + ".json";
 			// console.log(weatherURL)
 			// AJAX call for weather
 			$.ajax({ url: weatherURL, method: 'GET' }).done(function(res){
