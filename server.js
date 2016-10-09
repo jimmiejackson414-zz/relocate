@@ -23,8 +23,8 @@ app.use(cookieParser())
 
 // Database configuration for mongoose
 // db: relocate
-mongoose.connect('mongodb://localhost/relocate');
-// mongoose.connect('mongodb://heroku_6wg162k4:r7ch70cs5kc8gtjg5pofqfi9u3@ds053146.mlab.com:53146/heroku_6wg162k4');
+// mongoose.connect('mongodb://localhost/relocate');
+mongoose.connect('mongodb://heroku_6wg162k4:r7ch70cs5kc8gtjg5pofqfi9u3@ds053146.mlab.com:53146/heroku_6wg162k4');
 // hook mongoose connection to db
 var db = mongoose.connection;
 
