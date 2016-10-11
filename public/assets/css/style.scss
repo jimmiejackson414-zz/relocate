@@ -271,7 +271,11 @@ nav {
         font-size: 2rem;
         text-transform: uppercase;
     }
-     /* label focus color */
+    .card-subTitle {
+        font: $h3-font;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+    }
    .input-field input[type=text]:focus + label {
      color: $accent-color;
     }

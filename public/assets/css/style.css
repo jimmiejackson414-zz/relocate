@@ -161,7 +161,6 @@ nav #dropdown1 {
 
 #mainContent {
   padding-top: 20px;
-  /* label focus color */
   /* label underline focus color */ }
   #mainContent h1 {
     margin: 0rem;
@@ -198,6 +197,10 @@ nav #dropdown1 {
   #mainContent .card-title {
     font: "Raleway", sans-serif;
     font-size: 2rem;
+    text-transform: uppercase; }
+  #mainContent .card-subTitle {
+    font: "Raleway", sans-serif;
+    font-size: 1.3rem;
     text-transform: uppercase; }
   #mainContent .input-field input[type=text]:focus + label {
     color: #9CCC65; }
