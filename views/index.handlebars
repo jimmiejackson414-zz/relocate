@@ -20,6 +20,11 @@
             <p id="homePageText">Learn. Move. Love.</p>
         </div>
 
+{{!------------- ERROR MESSAGE ------------------------------}}
+        {{#if errorMsg}}
+        <h5 id='errorMsg'>{{errorMsg}}</h5>
+        {{/if}}
+{{!----------------------------------------------------------}}
         <!-- Modal Trigger -->
         <div class='homePageBtns' style='text-align:center'>
             <button data-target="modal1" class="light-green lighten-1 waves-effect waves-light btn-large logInBtn modal-trigger"><i class="material-icons right">play_circle_outline</i>Login</button>

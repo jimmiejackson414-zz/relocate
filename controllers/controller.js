@@ -25,7 +25,7 @@ router.get('/register', function(req, res, body) {
 router.get('/dashboard', function(req, res, body) {
     if (!req.cookies.loggedIn) {
     	console.log("Not logged in");
-    	res.render('register', { errorMsg: 'You must create an account to access re/locate'});
+    	res.render('index', { errorMsg: 'You must create an account to access re/locate'});
     }else {
     	res.render('dashboard');	
     }

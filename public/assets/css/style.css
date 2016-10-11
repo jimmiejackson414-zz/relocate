@@ -96,6 +96,7 @@
   color: #9CCC65; }
 
 #errorMsg {
+  background-color: #9ccc65;
   color: red;
   text-align: center;
   font-family: "Raleway", sans-serif; }
