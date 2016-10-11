@@ -21,6 +21,7 @@ router.get('/register', function(req, res, body) {
     // , { invalidLogin: 'Username or Password was incorrect; try again' }
 });
 
+
 router.get('/dashboard', function(req, res, body) {
     if (!req.cookies.loggedIn) {
     	console.log("Not logged in");
@@ -30,6 +31,7 @@ router.get('/dashboard', function(req, res, body) {
     }
 });
 
+// User Registration 
 router.post('/dashboard/register', function(req, res) {
 	var user = new User(req.body);
 	user.save(function(err, doc) {
@@ -42,6 +44,7 @@ router.post('/dashboard/register', function(req, res) {
 
 	});
 });
+
 
 router.post('/dashboard', (req, res) => {
         let email = req.body.email;
@@ -61,6 +64,12 @@ router.post('/dashboard', (req, res) => {
             }
         });
     });
+
+router.get('/dashboard/logout', function(req, res){
+	console.log(req.cookie);
+	res.clearCookie('loggedIn');
+	res.redirect('/');
+})
 
 
 

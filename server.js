@@ -45,6 +45,13 @@ var User = require('./models/user.js');
 var routes = require('./controllers/controller.js');
 app.use('/', routes);
 
+// app.get('#dropdown1', function(req,res){
+//  req.logOut();
+//  req.session.destroy(function (err) {
+//         res.redirect('/'); 
+//     });
+// });
+
 //MAKE THE CONNECTION=================================================
 var PORT = process.env.PORT || 3000;
 app.listen(PORT, function() {
