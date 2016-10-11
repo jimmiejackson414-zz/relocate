@@ -71,22 +71,18 @@
     width: 100%;
     height: auto; }
 
-.modal-content {
-  /* label focus color */
-  /* label underline focus color */ }
-  .modal-content p {
-    text-align: center; }
-  .modal-content h4 {
-    text-align: center;
-    color: black;
-    font-family: "Raleway", sans-serif; }
-  .modal-content input.validate {
-    color: black; }
-  .modal-content .input-field input[type=text]:focus + label {
-    color: #9CCC65; }
-  .modal-content .input-field input[type=text]:focus {
-    border-bottom: 1px solid #9CCC65;
-    box-shadow: 0 1px 0 0 #000; }
+.modal-content p {
+  text-align: center; }
+.modal-content h4 {
+  text-align: center;
+  color: black;
+  font-family: "Raleway", sans-serif; }
+.modal-content input.validate {
+  color: black; }
+.modal-content input#email:focus, .modal-content input#password:focus {
+  border-bottom: 1px solid #9CCC65; }
+.modal-content .row .input-field label.active {
+  color: #9CCC65; }
 
 /* //////// */
 /* REGISTER */
@@ -195,6 +191,10 @@ nav #dropdown1 {
       background-color: #9CCC65; }
   #mainContent input#jobSearch {
     color: black; }
+    #mainContent input#jobSearch :focus {
+      border-bottom: 1px solid #9CCC65; }
+  #mainContent input#jobSearch:focus {
+    border-bottom: 1px solid #9CCC65; }
   #mainContent .card-title {
     font: "Raleway", sans-serif;
     font-size: 2rem;
